@@ -1,0 +1,191 @@
+@import "mixins";
+@bg-nav: #333;
+@bg-title-button: #6ECFF6;
+@bg-default-button: #6ECFF6;
+@bg-cancel-button: #F9AD81;
+
+// MAIN ELEMENTS //////////////////////////////////////////
+
+body, html{
+  height: 100%;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+	font-family: "proxima-nova";
+  font-size: 1em;
+  background: url(/images/bg.png);
+  color: #333;
+}
+
+nav{
+  position: relative;
+  background-color: @bg-nav;
+  border-bottom: 1px solid lighten(@bg-nav, 10%);
+  .noise;
+  #search{
+    padding: 10px 25px;
+    background-color: darken(@bg-nav, 10%);
+    .noise;
+    border-top: 1px solid #858585;
+    color: #F2F2F2;
+    .search-input{
+      border: none;
+      display: inline;
+      width: 250px;
+      border: 1px solid lighten(@bg-nav, 10%);
+      background: #F2F2F2;
+      color: #333;
+      padding: 3px 5px;
+      .radius;
+      .small;
+    }
+    .date-search{
+      width: 90px;
+    }
+  }
+}
+
+section{
+  overflow: hidden;
+  height: 100%;
+  padding: 0px 0px;
+  margin: 0 auto;
+  article{
+    height: 100%;
+    padding: 10px 10px;
+  }
+  aside{
+    padding: 10px 10px;
+    float: right;
+    width: 480px;
+  }
+}
+
+h1, h2, h3, h4{
+  padding: 0;
+  margin: 0;
+}
+
+h1.title{
+	color: #F2F2F2;
+  padding: 25px;
+}
+
+h4.title-fichiers{
+  border-top: 1px dashed #BDBDBD;
+  padding-top: 10px;
+}
+
+#stats{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #F2F2F2;
+  .small;
+}
+
+#login{
+  position: absolute;
+  right: 10px;
+  top: 40px;
+  color: #F2F2F2;
+  .small;
+  a{
+    color: #333;
+    background: none;
+    border: none;
+  }
+  #login-sign-in-link, #login-name-link{
+    color: #f2f2f2;
+  }
+  button.title-button, a.title-button{
+    .btn(@color: @bg-title-button);
+    color: #000;
+    font-weight: bold;
+    border: 1px solid darken(@bg-title-button, 10%);
+    text-decoration: none;
+  }
+}
+
+// BUTTONS //////////////////////////////////////////////////
+
+button {
+  .btn(@color: @bg-default-button);
+  margin-bottom: 10px;
+}
+
+.button-tiny{
+  .tiny;
+}
+
+.button-small{
+  .small;
+}
+
+.button-medium{
+  .medium;
+}
+
+.button-destroy{
+  .btn(@color: #991c1c);
+  color: #fff;
+}
+
+// LINKS ///////////////////////////////////////////////////
+
+a{
+ .btn(@color: @bg-default-button);
+  margin-bottom: 10px;
+}
+
+a.cancel{
+  .btn(@color: @bg-cancel-button);
+  color: #fff;
+}
+
+// LISTS //////////////////////////////////////////////////
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+  li{
+    border-bottom: 1px dashed #BDBDBD;
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+}
+
+// PANELS /////////////////////////////////////////////////
+
+.panel{
+  background: #FAFAFA;
+  padding: 15px;
+  margin: 10px 0px;
+  border: 1px solid #BDBDBD;
+}
+
+// HELPERS ////////////////////////////////////////////////
+
+.align-right{
+  float: right;
+}
+
+.text-left{
+  text-align: left;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.text-right{
+  text-align: right;
+}
+
+i{
+  cursor: pointer;
+}

@@ -1,0 +1,10 @@
+<template name="supplierItem">
+	{{#if editing}}
+		<input type="text" id="editNameSupplier" placeholder="nom du fournisseur" value="{{name}}" autofocus>
+	{{else}}	
+		<li class="supplier-item">
+			{{name}}
+			<div class="actions"><i id="deleteSupplier" class="fa fa-trash-o"></i></div>
+		</li>	
+	{{/if}}
+</template>

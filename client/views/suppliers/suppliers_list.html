@@ -1,0 +1,20 @@
+<template name="suppliersList">
+
+<div class="panel">
+	<button id="newSupplier" class="button-tiny align-right">{{textButtonAddSupplier}}</button>
+	<h2>Liste des fournisseurs</h2>
+
+	{{#if addable}}
+	  <form id="newSupplierForm" class="small-form">
+	    <input type="text" name="nameSupplier" placeholder="nom du fournisseur" class="input-lg" autofocus>
+	  </form>
+	{{/if}}
+
+	<ul>
+	  {{#each suppliers}}
+	    {{> supplierItem}}
+	  {{/each}}   
+	</ul>	
+</div>
+
+</template>

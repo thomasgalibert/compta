@@ -1,0 +1,45 @@
+@import 'mixins';
+@bg-fichier: #8493CA;
+
+.supplier-item, .client-item{
+	position: relative;
+	.actions{
+		display: none;
+	}
+	&:hover{
+		.actions{
+			position: absolute;
+			right: 5px;
+			top: 3px;
+			display: block;
+			button{
+				.tiny;
+			}
+		}
+	}
+}
+
+#fichiers{
+	.small;
+	width: 100%;
+	.downloadButton{
+		background: none;
+		border: none;
+		color: @bg-fichier;
+		text-decoration: underline;
+	}
+	.fichier{
+		width: 100%;
+		position: relative;
+		padding: 0;
+		border: none;
+		button{
+			text-align: left;
+		}
+		#deleteFichier{
+			position: absolute;
+			left: -10px;
+			bottom: 13px;
+		}
+	}
+}

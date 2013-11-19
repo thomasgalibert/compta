@@ -1,0 +1,50 @@
+@import "mixins";
+
+@th-bg-color: #BDBDBD;
+@td-bg-color: #fff;
+@tr-selected-bg-color: #eee;
+
+table{
+	border-collapse: collapse;
+	thead{
+		th{
+			margin: 0;
+			padding: 5px 10px;
+			border-right: 1px solid lighten(@th-bg-color, 10%);
+			background: @th-bg-color;
+			color: #000;
+		}
+	}
+	tbody{
+		td{
+			margin: 0;
+			padding: 3px 5px;
+			border-right: 1px solid lighten(@th-bg-color, 10%);
+			border-bottom: 1px solid lighten(@th-bg-color, 10%);
+			vertical-align: center;
+			color: #333;
+			.small;
+			text-align: center;
+			button{
+				background: none;
+				border: none;
+				text-decoration: underline;
+				padding: 0;
+				&:hover{
+					background: none;
+				}
+			}
+		}
+		tr{
+			background: @td-bg-color;
+			&:hover{
+				background: @tr-selected-bg-color;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.selected{
+	background: @tr-selected-bg-color;
+}

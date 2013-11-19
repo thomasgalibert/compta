@@ -1,0 +1,9 @@
+<template name="fichierItem">
+	<li class="fichier">
+		{{cfsDownloadButton "Fichiers" class="downloadButton" content=filename}}
+		{{#if cfsIsUploading "Fichiers" file=this}}
+       {{cfsQueueProgressBar "Fichiers" file=this class="uploadBar"}}
+    {{/if}}
+		<i id="deleteFichier" class="fa fa-trash-o"></i>
+	</li>
+</template>

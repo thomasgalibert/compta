@@ -1,0 +1,32 @@
+<head>
+  <title>Comptabilité SAS Demerys</title>
+  <script type="text/javascript" src="//use.typekit.net/bxc5lyr.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+
+<body>
+
+	<nav>
+		{{> title}}
+    {{#if currentUser}}
+      {{> search}}
+    {{/if}}
+	</nav>
+	
+  {{> errors}}
+
+  <section>
+    {{#if currentUser}}
+      <aside>
+        {{> forms}}
+        {{> suppliersList}} 
+        {{> clientsList}} 
+      </aside>
+    {{/if}}
+    <article>
+      {{renderPage}}  
+    </article>
+  </section>
+  
+
+</body>

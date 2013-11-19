@@ -1,0 +1,14 @@
+<template name="bankItem">
+	<tr>
+		<td>{{dateFr}}</td>
+		<td>{{metadata.info}}</td>
+		<td>{{metadata.libelle}}</td>
+		<td>
+			{{cfsDownloadButton "Banks" class="downloadButton" content=filename}}
+			{{#if cfsIsUploading "Banks" file=this}}
+       {{cfsQueueProgressBar "Banks" file=this class="uploadBar"}}
+    {{/if}}
+		</td>
+		<td><i id="deleteBank" class="fa fa-trash-o"></i></td>
+	</tr>
+</template>

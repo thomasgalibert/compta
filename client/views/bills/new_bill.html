@@ -1,0 +1,154 @@
+<template name="newBill">
+	{{#if editing}}
+
+      {{#with editedBill}}
+        <form id="editBillForm">
+          
+          <fieldset>
+          <legend>Saisie de facture</legend>
+          <div class="group-inputs" data-width="2">
+            <div class="input">
+              <input type="text" name="libelleBill" placeholder="ex: ramette de papier a4" value="{{libelle}}">
+              <label>Libellé de la facture</label>  
+            </div>
+            <div class="input">
+              <input type="text" name="dateBill" placeholder="format: dd/mm/YYYY" id="dateBill" value="{{dateHuman}}">  
+              <label>date de la facture</label>
+            </div>
+          </div>
+            
+          <div class="group-inputs-payment">
+            <div class="input amountBillInteger">
+              <input type="text" name="amountBillInteger" placeholder="499 ," class="text-right" value="{{integerPart}}">  
+              <label>montant</label>
+            </div>
+            <div class="input amountBillFloat">
+              <input type="text" name="amountBillFloat" placeholder="00 €" value="{{decimalPart}}">    
+              <label>valeur décimale</label>
+            </div>
+            <div class="input paidAtBill">
+              <input type="text" name="paidAtBill" placeholder="format: dd/mm/YYYY" value="{{paidAtHuman}}">  
+              <label>date de  paiement</label>
+            </div>
+            
+          </div>
+          
+          {{#if editingType}}
+            <select class="form-control" name="supplierBill">
+              <option value="">-- choisissez un fournisseur --</option>
+              {{#each suppliers}}
+                <option value="{{_id}}" {{selectSupplier}}>{{name}}</option>
+              {{/each}}
+            </select>
+          {{else}}
+            <select class="form-control" name="clientBill">
+              <option value="">-- choisissez un client --</option>
+              {{#each clients}}
+                <option value="{{_id}}" {{selectClient}}>{{name}}</option>
+              {{/each}}
+            </select>
+          {{/if}}
+      
+          <select class="form-control" name="paidHowBill">
+            <option value="">-- choisissez moyen de paiement --</option>
+            {{#each paiements}}
+              <option value="{{value}}" {{selectPaidHow}}>{{name}}</option>
+            {{/each}}
+          </select>  
+        </fieldset>
+        
+        <div class="footer-form">
+          <button type="submit">Enregistrer</button>
+          <a id="newFormBill" class="cancel">Nouvelle facture</a>  
+        </div>  
+
+        <h4 class="title-fichiers">Sélectionner les fichiers à télécharger:</h4>
+        <input name="files" type="file" class="fileUploader" multiple>
+
+        <ul id="fichiers">
+          {{#each fichiers}}
+            {{> fichierItem}}
+          {{else}}
+            Pas de fichiers téléchargés.
+          {{/each}}  
+        </ul>
+
+        </form>
+
+
+
+      {{/with}}    
+
+  {{else}}
+
+      <form id="newBillForm">
+
+      <div class="onoffswitch" id="billingSwitch">
+        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+        <label class="onoffswitch-label" for="myonoffswitch">
+            <div class="onoffswitch-inner"></div>
+            <div class="onoffswitch-switch"></div>
+        </label>
+      </div>
+        
+        <fieldset>
+          <legend>Saisie de facture</legend>
+          <div class="group-inputs" data-width="2">
+            <div class="input">
+              <input type="text" name="libelleBill" placeholder="ex: ramette de papier a4">
+              <label>Libellé de la facture</label>  
+            </div>
+            <div class="input">
+              <input type="text" name="dateBill" placeholder="format: dd/mm/YYYY" id="dateBill">  
+              <label>date de la facture</label>
+            </div>
+          </div>
+            
+          <div class="group-inputs-payment">
+            <div class="input amountBillInteger">
+              <input type="text" name="amountBillInteger" placeholder="499 ," class="text-right">  
+              <label>montant</label>
+            </div>
+            <div class="input amountBillFloat">
+              <input type="text" name="amountBillFloat" placeholder="00 €">    
+              <label>valeur décimale</label>
+            </div>
+            <div class="input paidAtBill">
+              <input type="text" name="paidAtBill" placeholder="format: dd/mm/YYYY">  
+              <label>date de  paiement</label>
+            </div>
+            
+          </div>
+        
+          {{#if billSupplier}}
+            <select class="form-control" name="supplierBill">
+              <option value="">-- choisissez un fournisseur --</option>
+              {{#each suppliers}}
+                <option value="{{_id}}">{{name}}</option>
+              {{/each}}
+            </select>
+          {{else}}
+            <select class="form-control" name="clientBill">
+              <option value="">-- choisissez un client --</option>
+              {{#each clients}}
+                <option value="{{_id}}">{{name}}</option>
+              {{/each}}
+            </select>
+          {{/if}}
+      
+          <select class="form-control" name="paidHowBill">
+            <option value="">-- choisissez moyen de paiement --</option>
+            {{#each paiements}}
+              <option value="{{value}}">{{name}}</option>
+            {{/each}}
+          </select>  
+        </fieldset>
+        
+        <div class="footer-form">
+          <button type="submit">Enregistrer</button>
+          <a id="clearFormBill" class="cancel">Effacer le formulaire</a>  
+        </div>
+        
+      </form>
+  {{/if}}
+</template>

@@ -1,0 +1,20 @@
+<template name="clientsList">
+
+<div class="panel">
+	<button id="newClient" class="button-tiny align-right">{{textButtonAddClient}}</button>
+	<h2>Liste des clients</h2>
+
+	{{#if addable}}
+	  <form id="newClientForm" class="small-form">
+	    <input type="text" name="nameClient" placeholder="nom du client" autofocus>
+	  </form>
+	{{/if}}
+
+	<ul>
+	  {{#each clients}}
+	    {{> clientItem}}
+	  {{/each}}       
+	</ul>	
+</div>
+
+</template>

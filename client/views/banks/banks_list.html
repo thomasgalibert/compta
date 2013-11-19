@@ -1,0 +1,22 @@
+<template name="banksList">
+	<table id="banksList">
+		<thead>
+			<tr>
+				<th>Date</th>
+				<th>ID pièce</th>
+				<th>Libellé</th>
+				<th>Fichier</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each banks}}
+        {{> bankItem}}
+      {{else}}
+      	<tr>
+      		<td colspan="3">Pas de fichiers téléchargés.</td>
+      	</tr>
+      {{/each}}
+		</tbody>
+	</table>
+</template>

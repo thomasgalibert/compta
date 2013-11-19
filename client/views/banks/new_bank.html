@@ -1,0 +1,27 @@
+<template name="newBank">
+	<form id="newBankForm">
+		<fieldset>
+			<legend>Saisie d'une pièce bancaire</legend>
+			<div class="group-inputs" data-width="2">
+	      <div class="input">
+	        <input type="text" name="infoBank" id="infoBank" placeholder="ex: numéro remise">
+	        <label>ID pièce</label>  
+	      </div>
+	      <div class="input">
+	        <input type="text" name="dateBank" id="dateBank" placeholder="format: dd/mm/YYYY">  
+	        <label>date de la pièce</label>
+	      </div>
+	    </div>
+	    <div class="group-inputs" data-width="1">
+	    	<div class="input">
+        	<input type="text" id="libelleBank" placeholder="ex: remise de chèque">
+        	<label>Libellé de la pièce</label>  
+      	</div>	
+	    </div>
+	    
+		</fieldset>
+		<br>
+		<input name="files" type="file" class="fileUploader" multiple>
+		
+	</form>
+</template>

@@ -1,0 +1,142 @@
+@import "mixins";
+
+@label-color: orange;
+@bg-submit-button: #C4DF9B;
+
+// FORM STYLING
+
+input[type="text"]{
+  background: none;
+  border: none;
+  margin: 0;
+  width: 100%;
+  .border-box;
+  border-bottom: 1px dashed #BDBDBD;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-family: "proxima-nova";
+  font-size: 1em;
+  &:focus{ 
+    outline: none;
+  }
+}
+
+form{
+  position: relative;
+  background: #FAFAFA;
+  padding: 15px;
+  margin: 0;
+  border: 1px solid #BDBDBD;
+  fieldset{
+    border: none;
+    margin: 0;
+    padding: 0;
+    legend{
+      width: 100%;
+      .big;
+      padding: 10px 7px;
+      text-align: left;
+      border-bottom: 1px dashed #BDBDBD;
+      margin-bottom: 20px;
+    }
+  }
+  .input{
+    position: relative;
+    .border-box;
+    margin: 0px;
+    padding: 0px;
+    label{
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 0px;
+      right: 5px;
+      bottom: 1px;
+      left: 5px;
+      z-index: 1;
+      height: 10px;
+      color: darken(@label-color, 20%);
+      font-weight: bold;
+      white-space: nowrap;
+      cursor: text;
+      .tiny;
+    }
+  }
+  input[type="text"], select, textarea{
+    font-size: 1em;
+    display: block;
+    margin: 0px 0px;
+    padding: 15px 15px;
+    font-family: "proxima-nova";
+    &:focus{ 
+      outline: none;
+    }
+  }
+  input[type="text"]{
+    background: #FAFAFA;
+    border: none;
+    border-bottom: 1px solid #BDBDBD;
+    width: 100%;
+    .border-box;
+    &.text-right{text-align: right;}
+  }
+  select{
+    width: 100%;
+    margin: 10px 0px;
+  }
+  textarea{
+    width: 100%;
+  }
+  button{
+    .btn(@color: @bg-submit-button);
+  }
+  .group-inputs{
+    display: block;
+    position: relative;
+  }
+  div[data-width="2"]{
+    .input{
+      float: left;
+      width: 100%/2;
+      &:nth-child(1){
+      border-right: 1px solid #BDBDBD;
+      }
+    }
+  }
+  div[data-width="1"]{
+    .input{
+      float: left;
+      width: 100%;
+    }
+  }
+  .group-inputs-payment{
+    display: block;
+    .input{
+      float: left;
+    }
+    .input.amountBillInteger{width: 25%; text-align: right;border-right: 1px solid #BDBDBD; margin-bottom: 10px}
+    .input.amountBillFloat{width: 25%; border-right: 1px solid #BDBDBD; margin-bottom: 10px}
+    .input.paidAtBill{width: 50%; margin-bottom: 10px}
+  }
+  .footer-form{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+// Others helpers
+
+.small-form{
+  border: none;
+  padding: 0px;
+}
+
+#billingSwitch{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.icon-search{
+  margin-left: 10px;
+}

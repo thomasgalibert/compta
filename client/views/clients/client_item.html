@@ -1,0 +1,10 @@
+<template name="clientItem">
+	{{#if editing}}
+		<input type="text" id="editNameClient" placeholder="nom du client" value="{{name}}" autofocus>
+	{{else}}	
+		<li class="client-item">
+			{{name}}
+			<div class="actions"><i id="deleteClient" class="fa fa-trash-o"></i></div>
+		</li>	
+	{{/if}}
+</template>

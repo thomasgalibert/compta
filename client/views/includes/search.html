@@ -1,0 +1,32 @@
+<template name="search">
+	<div id='search'>
+    {{#if displayBank}}
+      Recherche :
+      <input type="text" placeholder="libellé" id="searchBankLibelle" class="search-input"></input>           
+      <input type="text" placeholder="ID Pièce" id="searchBankInfo" class="search-input"></input>        		
+      Dates : 
+      <input type="text" class="search-input date-search" id="fromBankDate" placeholder="dd/mm/YYYY"></input> - <input type="text" id="toBankDate" class="search-input date-search" placeholder="dd/mm/YYYY"></input>
+      <i id="resetSearchBank" class="fa fa-refresh icon-search"></i>
+    {{else}}
+      Recherche :
+      <select id="searchSupplier">
+        <option value="">-- tous les fournisseurs --</option>
+        {{#each suppliers}}
+          <option value="{{_id}}">{{name}}</option>
+        {{/each}}
+      </select>
+      <select id="searchClient">
+        <option value="">-- tous les clients --</option>
+        {{#each clients}}
+          <option value="{{_id}}">{{name}}</option>
+        {{/each}}
+      </select>
+      <input type="text" placeholder="le libellé contient le mot ..." id="searchLibelle" class="search-input"></input>
+      Dates : 
+      <input type="text" class="search-input date-search" id="fromDate" placeholder="dd/mm/YYYY"></input> - <input type="text" id="toDate" class="search-input date-search" placeholder="dd/mm/YYYY"></input>
+      Montant : 
+      <input type="text" class="search-input date-search text-right" id="fromAmount" placeholder="100"></input> - <input type="text" id="toAmount" class="search-input date-search text-right" placeholder="110"></input>
+      <i id="resetSearch" class="fa fa-refresh icon-search"></i>
+    {{/if}}
+	</div>
+</template>

@@ -1,0 +1,21 @@
+<template name="title">
+	<h1 class="title">Comptabilité | SAS DEMERYS</h1>
+	<div id="stats">
+		{{#if currentUser}}
+			<div id="ca">
+				Nbr de pièces bancaires : &nbsp; {{totalBanks}} &nbsp; | &nbsp;
+				Nbr de factures téléchargées : &nbsp; {{totalFichiers}} &nbsp; | &nbsp;
+				Chiffre d'affaires : {{ca}}
+			</div>
+		{{/if}}
+	</div>
+	<div id="login">
+		{{#if currentUser}}
+			<a href="{{homePath}}" class="title-button">Factures</a>
+			<a href="{{banksListPath}}" class="title-button">Pièces bancaires</a>
+			<button class="title-button new-bill">nouvelle facture</button>
+			<button class="title-button new-bank">nouvelle pièce bancaire</button>
+			{{/if}}
+		{{loginButtons align="right"}}
+	</div>
+</template>

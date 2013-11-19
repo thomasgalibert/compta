@@ -1,0 +1,22 @@
+<template name="billsList">
+  <table id="bills-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Date</th>
+        <th>Libellé</th>
+        <th>Fournisseur / Client</th>
+        <th>Date de paiement</th>
+        <th>Moyen de paiement</th>
+        <th class="text-right">Montant</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each bills}}
+        {{> billItem}}
+      {{/each}}
+    </tbody>
+  </table>
+  
+</template>

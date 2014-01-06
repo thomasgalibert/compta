@@ -30,16 +30,3 @@ Template.title.events({
 		Session.set('displayBank', true);
 	}
 });
-
-Template.title.rendered = function() {
-  $('#login-sign-in-link').text('Connexion ▾');
-  $('.login-close-text').text('fermer');
-  $('#login-username-label').text("nom d'utilisateur");
-  $('#login-password-label').text("mot de passe");
-  $('#login-password-again-label').text("confirmation");
-  $('.login-button-form-submit').text("connexion");
-  $('#back-to-login-link').text("connexion");
-  $('#signup-link').text("créer un compte");
-  $('#login-buttons-logout').text("déconnexion");
-  $('#login-buttons-open-change-password').text("changer le mot de passe");
-};

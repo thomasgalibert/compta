@@ -101,6 +101,9 @@ Template.newBill.events({
 			} else {
 				Session.set('selectedBill', id);
 				Session.set('editingBill',true);
+    		Session.set('selectedSupplier', bill.supplier);
+    		Session.set('selectedClient', bill.client);
+    		Session.set('selectedPaidHow', bill.paidHow);
 			}
 		});
 	},
@@ -125,6 +128,9 @@ Template.newBill.events({
 			} else {
 				Session.set('selectedBill', id);
 				Session.set('editingBill',true);
+    		Session.set('selectedSupplier', bill.supplier);
+    		Session.set('selectedClient', bill.client);
+    		Session.set('selectedPaidHow', bill.paidHow);
 			}
 		});
 	},

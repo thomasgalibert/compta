@@ -17,6 +17,14 @@ Template.billItem.events({
 		Session.set('selectedClient', this.client);
 		Session.set('selectedPaidHow', this.paidHow);
 		Session.set('displayBank', false);
+	},
+	'click .editedBill': function(e){
+		bill = Bills.findOne(this._id);
+		if (bill.edited == true){
+			Bills.update(this._id, {$set: {edited: false}});
+		} else {
+			Bills.update(this._id, {$set: {edited: true}});
+		}
 	}
 });
 
@@ -26,6 +34,11 @@ Template.billItem.helpers({
 			return "selected";
 		} else {
 			return "";
+		}
+	},
+	isEdited: function(){
+		if (this.edited == true){
+			return "checked"
 		}
 	},
 	kindBill: function(){

@@ -34,8 +34,13 @@ Meteor.methods({
 		// Convert amount
 		var amountInteger = checkNumber(billAttributes.amountInteger);
 		var amountFloat = checkFloat(billAttributes.amountFloat);
-		var amount = parseFloat(amountInteger) + (parseFloat(amountFloat)/100);
 
+		if (amountInteger < 0){
+			var amount = parseFloat(amountInteger) - (parseFloat(amountFloat)/100);
+		} else {
+			var amount = parseFloat(amountInteger) + (parseFloat(amountFloat)/100);	
+		}
+		
 		var bill = _.extend(_.pick(billAttributes, 'libelle','supplier','paidHow','kind','client'), {
 			date: date,
 			paidAt: paidAt,

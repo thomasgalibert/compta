@@ -2,8 +2,8 @@ Template.title.helpers({
 	ca: function(){
 		total = 0;
 		firstDay = new Date(new Date().getFullYear(), 0, 1);
-		lastDay = new Date(new Date().getFullYear(), 12, 31);
-		var bills = Bills.find({date: {$gte: firstDay}, date: {$lte: lastDay}});
+		lastDay = new Date(new Date().getFullYear(), 11, 31);
+		var bills = Bills.find({date: {$gte: firstDay, $lt: lastDay}});
 		bills.forEach(function (bill){
 			if (bill.kind == "client"){
 				total += bill.amount;

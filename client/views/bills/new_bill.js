@@ -67,12 +67,20 @@ Template.newBill.helpers({
 		}
 	},
 	integerPart: function(){
-		return Math.floor(this.amount);
+		if (this.amount > 0){
+			return Math.floor(this.amount);	
+		} else {
+			return Math.ceil(this.amount);	
+		}
 	},
 	decimalPart: function(){
 		var decimal = Math.round((this.amount % 1) * 100);
 		if (decimal < 10){
-			return "0"+decimal;
+			if (decimal < 0){
+				return Math.abs(decimal);	
+			} else{
+				return "0"+decimal;	
+			}
 		} else {
 			return decimal;
 		}

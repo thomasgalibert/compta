@@ -15,10 +15,10 @@ Session.set('toBankDate','');
 
 Template.search.helpers({
 	suppliers: function(){
-		return Suppliers.find();
+		return Suppliers.find({}, {sort: {name: 1}});
 	},
 	clients: function(){
-		return Clients.find();
+		return Clients.find({}, {sort: {name: 1}});
 	},
 	displayBank: function(){
 		return Session.get('displayBank');

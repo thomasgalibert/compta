@@ -2,7 +2,8 @@ var moyenPaiements = [
 	{value: "cb", name: "carte bancaire"},
 	{value: "ch", name: "chèque"},
 	{value: "vi", name: "virement"},
-	{value: "es", name: "espèces"}
+	{value: "es", name: "espèces"},
+	{value: "pre", name: "prélèvement"}
 ];
 
 Template.newBill.helpers({

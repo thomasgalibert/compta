@@ -86,6 +86,8 @@ Template.billItem.helpers({
 			case "es":
 				return "Espèces";
 				break;
+			case "pre":
+				return "Prélèvement";
 			default:
 				return "--";
 				break;
